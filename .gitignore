@@ -3,3 +3,8 @@
 /local-config.properties
 /local-boot.properties
 *~
+
+# Project specific
+
+ignu-res/decompiled/*
+ignu-res/res/*
