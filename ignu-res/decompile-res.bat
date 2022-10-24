@@ -1,0 +1,1 @@
+java -jar LayerUtil.jar -ns -rd res/%1.res decompiled/res/%1
