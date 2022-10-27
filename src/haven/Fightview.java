@@ -37,7 +37,8 @@ public class Fightview extends Widget {
     public static final Coord avasz = Coord.of(bg.sz().y - UI.scale(6));
     public static final Coord cavac = new Coord(width - Avaview.dasz.x - UI.scale(10), UI.scale(10));
     public static final Coord cgivec = new Coord(cavac.x - UI.scale(35), cavac.y);
-    public static final Coord cpursc = new Coord(cavac.x - UI.scale(75), cgivec.y + UI.scale(35));
+	// Ignurof: Disabled pursue button
+    //public static final Coord cpursc = new Coord(cavac.x - UI.scale(75), cgivec.y + UI.scale(35));
     public final LinkedList<Relation> lsrel = new LinkedList<Relation>();
     public final Bufflist buffs = add(new Bufflist()); {buffs.hide();}
     public final Map<Long, Widget> obinfo = new HashMap<>();
@@ -83,7 +84,7 @@ public class Fightview extends Widget {
 	public final Relation rel;
 	public final Avaview ava;
 	public final GiveButton give;
-	public final Button purs;
+	//public final Button purs;
 
 	public Relbox(Relation rel) {
 	    super(bg.sz());
@@ -101,17 +102,19 @@ public class Fightview extends Widget {
 	    super.draw(g);
 	}
 
-	public void wdgmsg(Widget sender, String msg, Object... args) {
-	    if(sender == ava) {
-		Fightview.this.wdgmsg("click", (int)rel.gobid, args[0]);
-	    } else if(sender == give) {
-		Fightview.this.wdgmsg("give", (int)rel.gobid, args[0]);
-	    } else if(sender == purs) {
-		Fightview.this.wdgmsg("prs", (int)rel.gobid);
-	    } else {
-		super.wdgmsg(sender, msg, args);
-	    }
-	}
+		public void wdgmsg(Widget sender, String msg, Object... args) {
+			if(sender == ava) {
+				Fightview.this.wdgmsg("click", (int)rel.gobid, args[0]);
+			} else if(sender == give) {
+				Fightview.this.wdgmsg("give", (int)rel.gobid, args[0]);
+			} else {
+				super.wdgmsg(sender, msg, args);
+			}
+			// Ignurof: Disabled below pursue button
+			//else if(sender == purs) {
+			//	Fightview.this.wdgmsg("prs", (int)rel.gobid);
+			//}
+		}
     }
 
     public class Rellist extends SListBox<Relation, Relbox> {
@@ -145,14 +148,15 @@ public class Fightview extends Widget {
 	public final Relation rel;
 	public final Avaview ava;
 	public final GiveButton give;
-	public final Button purs;
+	//public final Button purs; Ignurof: disabled pursue
 
 	public Mainrel(Relation rel) {
 	    this.rel = rel;
 	    Widget avaf = add(Frame.with(ava = new Avaview(Avaview.dasz, rel.gobid, "avacam"), false));
 	    ava.canactivate = true;
 	    adda(give = new GiveButton(0), avaf.pos("ul").subs(5, 0), 1.0, 0.0);
-	    adda(purs = new Button(UI.scale(70), "Pursue"), give.pos("br").adds(0, 5), 1.0, 0.0);
+		// Ignurof
+	    //adda(purs = new Button(UI.scale(70), "Pursue"), give.pos("br").adds(0, 5), 1.0, 0.0);
 	    lpack();
 	}
 
@@ -174,14 +178,15 @@ public class Fightview extends Widget {
 
 	public void wdgmsg(Widget sender, String msg, Object... args) {
 	    if(sender == ava) {
-		Fightview.this.wdgmsg("click", (int)rel.gobid, args[0]);
+			Fightview.this.wdgmsg("click", (int)rel.gobid, args[0]);
 	    } else if(sender == give) {
-		Fightview.this.wdgmsg("give", (int)rel.gobid, args[0]);
-	    } else if(sender == purs) {
-		Fightview.this.wdgmsg("prs", (int)rel.gobid);
+			Fightview.this.wdgmsg("give", (int)rel.gobid, args[0]);
 	    } else {
-		super.wdgmsg(sender, msg, args);
+			super.wdgmsg(sender, msg, args);
 	    }
+		//else if(sender == purs) {
+		//	Fightview.this.wdgmsg("prs", (int)rel.gobid);
+		//}
 	}
     }
 
