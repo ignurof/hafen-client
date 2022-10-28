@@ -36,6 +36,7 @@ public class Fightview extends Widget {
     public static final Tex bg = Resource.loadtex("gfx/hud/bosq");
     public static final int height = 5;
     public static final int ymarg = UI.scale(5);
+    // Ignurof: This is the width of the UI panel that contains all the relation ui, should leave it as is.
     public static final int width = UI.scale(175);
     public static final Coord avasz = Coord.of(bg.sz().y - UI.scale(6));
     public static final Coord cavac = new Coord(width - Avaview.dasz.x - UI.scale(10), UI.scale(10));
@@ -107,6 +108,7 @@ public class Fightview extends Widget {
         public Relbox(Relation rel) {
             super(bg.sz());
             this.rel = rel;
+            // Ignurof: This seems to be related to side relation avatar inside the frame
             Widget avaf = adda(Frame.with(ava = new Avaview(avasz, rel.gobid, "avacam"), true), UI.scale(25), sz.y / 2, 0.0, 0.5);
             ava.canactivate = true;
             add(give = new GiveButton(0, UI.scale(15, 15)), UI.scale(5, 4));
@@ -136,6 +138,7 @@ public class Fightview extends Widget {
     }
 
     public class Rellist extends SListBox<Relation, Relbox> {
+        // Ignurof: This seems to be the position of the side relation frames
         public Rellist(int h) {
             super(Coord.of(bg.sz().x, ((bg.sz().y + ymarg) * h) - ymarg), bg.sz().y, ymarg);
         }
