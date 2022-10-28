@@ -24,6 +24,8 @@
  *  Boston, MA 02111-1307 USA
  */
 
+// Fightview = Combat target relations UI
+
 package haven;
 
 import java.util.*;
