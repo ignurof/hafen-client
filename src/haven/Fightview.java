@@ -33,7 +33,9 @@ import java.util.*;
 import static haven.Utils.uint32;
 
 public class Fightview extends Widget {
-    public static final Tex bg = Resource.loadtex("gfx/hud/bosq");
+    // Ignurof: This is the old version, and gfx/hud/bosq also applies to for example stockpile number frames
+    //public static final Tex bg = Resource.loadtex("gfx/hud/bosq");
+    public static final Tex bg = Resource.loadtex("gfx/hud/bosq-ignu");
     public static final int height = 5;
     public static final int ymarg = UI.scale(5);
     // Ignurof: This is the width of the UI panel that contains all the relation ui, should leave it as is.
