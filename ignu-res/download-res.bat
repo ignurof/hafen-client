@@ -1,1 +1,1 @@
-curl https://game.havenandhearth.com/res/%1 -o res/%1 --create-dirs -k
+curl https://game.havenandhearth.com/res/%1 -o remote/res/%1 --create-dirs -k

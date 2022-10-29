@@ -109,7 +109,8 @@ public class Fightview extends Widget {
             super(bg.sz());
             this.rel = rel;
             // Ignurof: This seems to be related to side relation avatar inside the frame
-            Widget avaf = adda(Frame.with(ava = new Avaview(avasz, rel.gobid, "avacam"), true), UI.scale(25), sz.y / 2, 0.0, 0.5);
+            //Widget avaf = adda(Frame.with(ava = new Avaview(avasz, rel.gobid, "avacam"), true), UI.scale(25), sz.y / 2, 0.0, 0.5);
+            add(ava = new Avaview(avasz, rel.gobid, "avacam"), UI.scale(25, 25));
             ava.canactivate = true;
             add(give = new GiveButton(0, UI.scale(15, 15)), UI.scale(5, 4));
             // Ignurof: I assume above is peace button, below is useless pursue button that does nothing
