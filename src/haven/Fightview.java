@@ -112,9 +112,11 @@ public class Fightview extends Widget {
             this.rel = rel;
             // Ignurof: This seems to be related to side relation avatar inside the frame
             //Widget avaf = adda(Frame.with(ava = new Avaview(avasz, rel.gobid, "avacam"), true), UI.scale(25), sz.y / 2, 0.0, 0.5);
+            // The UI scale that I change seems to be X position for some reason
             Widget avaf = adda(Frame.with(ava = new Avaview(avasz, rel.gobid, "avacam"), true), UI.scale(90), sz.y / 2, 0.0, 0.5);
             ava.canactivate = true;
             //add(give = new GiveButton(0, UI.scale(15, 15)), UI.scale(5, 4));
+            // UI scale changed here is resizing the button
             add(give = new GiveButton(0, UI.scale(30, 30)), UI.scale(5, 4));
             // Ignurof: I assume above is peace button, below is useless pursue button that does nothing
             //adda(purs = new Button(UI.scale(70), "Pursue"), avaf.c.x + avaf.sz.x + UI.scale(5), avaf.c.y + (avaf.sz.y / 2), 0.0, 0.5);
